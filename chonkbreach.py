@@ -44,4 +44,10 @@ for i in range(1,50):
             formattedline2 = formattedline.replace(".", "-")
             print("--> URL to database leak: https://breachforums.is/Thread-"+ formattedline2)
             output_file.write("\n  --> URL to database leak: https://breachforums.is/Thread-"+ formattedline2)
-            
+        elif keyword.title() in line:
+            print(Fore.RED + "Possible database entry found on page " + str(i) + ": " + line)
+            output_file.write("- Possible database entry found on page " + str(i) + ": " + line)
+            formattedline = line.replace(" ", '-')
+            formattedline2 = formattedline.replace(".", "-")
+            print("--> URL to database leak: https://breachforums.is/Thread-"+ formattedline2)
+            output_file.write("\n  --> URL to database leak: https://breachforums.is/Thread-"+ formattedline2)
